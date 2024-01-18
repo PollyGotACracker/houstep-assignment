@@ -8,7 +8,7 @@
   row-gap: 0.76px;
   height: 170px;
   padding: 22px;
-  border-radius: var(--border-radius-top);
+  border-radius: var(--radius-large-top);
   background-color: #fff;
   box-shadow: 0 -4px 4px 0 rgba(var(--box-shadow-rgba));
 }

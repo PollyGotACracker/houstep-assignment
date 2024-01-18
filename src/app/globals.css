@@ -1,6 +1,7 @@
 :root {
-  --border-radius-all: 20px;
-  --border-radius-top: 20px 20px 0 0;
+  --radius-small-all: 10px;
+  --radius-large-all: 20px;
+  --radius-large-top: 20px 20px 0 0;
 
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
