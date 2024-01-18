@@ -1,0 +1,11 @@
+ul.product_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 18px;
+  padding: 25px;
+  margin-top: 57px;
+  margin-bottom: 170px;
+  list-style-type: none;
+}
