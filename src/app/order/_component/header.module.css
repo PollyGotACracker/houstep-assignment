@@ -1,0 +1,10 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 57px;
+  background-color: #000;
+  padding: 13px 12px;
+  box-shadow: 0 4px 4px 0 rgba(var(--box-shadow-rgba));
+}
