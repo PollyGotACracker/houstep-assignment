@@ -8,7 +8,7 @@
   font-size: 25px;
   font-weight: inherit;
   line-height: 30.26px;
-  border-radius: var(--border-radius-all);
+  border-radius: var(--radius-large-all);
   background-color: #fff;
   color: #000;
   white-space: nowrap;
