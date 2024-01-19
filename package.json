@@ -4,8 +4,8 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start": "node --loader ts-node/esm ./src/db/index.ts",
-    "dev": "next dev",
+    "start": "node --loader ts-node/esm /src/db/index.ts",
+    "dev": "concurrently \"next dev\" \"npm run server\"",
     "server": "json-server --watch ./src/db/db.json --port 3001",
     "prod": "next start",
     "build": "next build",
@@ -13,6 +13,7 @@
     "heroku-postbuild": "cross-env NODE_PATH=src npm run build"
   },
   "dependencies": {
+    "concurrently": "^8.2.2",
     "cross-env": "^7.0.3",
     "json-server": "^0.17.3",
     "next": "14.0.4",
