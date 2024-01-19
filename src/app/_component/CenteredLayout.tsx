@@ -2,12 +2,12 @@ import styles from "./centeredLayout.module.css";
 
 export default function CenteredLayout({
   children,
-  backgroundColor,
-  gap,
+  backgroundColor = "inherit",
+  gap = "inherit",
 }: {
   children: React.ReactNode;
-  backgroundColor: string;
-  gap: string;
+  backgroundColor?: string;
+  gap?: string;
 }) {
   return (
     <main
@@ -18,8 +18,3 @@ export default function CenteredLayout({
     </main>
   );
 }
-
-CenteredLayout.defaultProps = {
-  backgroundColor: "inherit",
-  gap: "inherit",
-};
