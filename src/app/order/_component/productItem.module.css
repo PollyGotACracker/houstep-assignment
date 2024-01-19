@@ -74,4 +74,5 @@ li.item.selected {
 
 .price {
   text-align: right;
+  white-space: nowrap;
 }
