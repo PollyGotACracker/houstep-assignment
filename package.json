@@ -2,9 +2,11 @@
   "name": "houstep-assignment",
   "version": "0.1.0",
   "type": "module",
+  "main": "index.js",
+  "proxy": "http://localhost:3001",
   "private": true,
   "scripts": {
-    "start": "node --loader ts-node/esm ./src/db/index.ts",
+    "start": "node --loader ts-node/esm ./src/db/index.ts -p $PORT",
     "dev": "concurrently \"next dev\" \"npm run server\"",
     "server": "json-server --watch ./src/db/db.json --port 3001",
     "prod": "next start",

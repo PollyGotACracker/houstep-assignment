@@ -5,7 +5,7 @@ const server = jsonServer.create();
 const __dirname = path.resolve();
 const router = jsonServer.router(path.join(__dirname + "/src/db/db.json"));
 const middlewares = jsonServer.defaults({
-  static: path.join(__dirname + "/.next/"),
+  static: path.join(__dirname + "/build/"),
 });
 
 const port = process.env.PORT || 3001;
