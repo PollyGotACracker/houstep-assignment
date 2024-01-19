@@ -23,3 +23,5 @@ export const totalCostSelector = selector({
     return cart.reduce((acc, cur) => acc + cur.product.price * cur.amount, 0);
   },
 });
+
+export const isOrderedState = atom({ key: "isOrderedState", default: false });

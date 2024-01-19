@@ -1,15 +1,26 @@
 "use client";
 
-import { useRecoilValue } from "recoil";
 import styles from "./userOrder.module.css";
-import { totalAmountSelector, totalCostSelector } from "@/atoms/order";
+import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useRouter } from "next/navigation";
+import {
+  isOrderedState,
+  totalAmountSelector,
+  totalCostSelector,
+} from "@/atoms/order";
 
 export default function UserOrder() {
+  const router = useRouter();
   const totalAmount = useRecoilValue(totalAmountSelector);
   const totalCost = useRecoilValue(totalCostSelector);
+  const setIsOrdered = useSetRecoilState(isOrderedState);
 
   const submitOrderHandler = () => {
     if (!!!totalCost) return;
+    setTimeout(() => {
+      setIsOrdered(true);
+      router.push("/complete");
+    }, 500);
   };
 
   return (
