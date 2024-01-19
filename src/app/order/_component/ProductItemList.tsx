@@ -20,7 +20,7 @@ export default function ProductItemList() {
 
   return (
     <>
-      {items.length ? (
+      {!!items.length ? (
         <ul className={styles.product_list}>
           {items.map((item: OrderItemType) => (
             <ProductItem key={item.id} item={item} />
