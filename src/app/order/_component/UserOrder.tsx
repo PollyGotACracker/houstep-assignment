@@ -18,7 +18,7 @@ export default function UserOrder() {
   const [submitText, setSubmitText] = useState("주문하기");
 
   const submitOrderHandler = () => {
-    if (!!!totalCost) return;
+    if (!!!totalAmount) return;
     setIsOrdered(true);
     setSubmitText("로딩 중...");
     setTimeout(() => {
@@ -34,7 +34,7 @@ export default function UserOrder() {
       </p>
       <button
         className={styles.order_button}
-        disabled={!!!totalCost || isOrdered}
+        disabled={!!!totalAmount || isOrdered}
         onClick={submitOrderHandler}
         type="button"
       >
