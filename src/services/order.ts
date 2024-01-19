@@ -1,4 +1,4 @@
-import fetchClient from "./fetchClient";
+import fetchClient from "./core/fetchClient";
 
 export const getOrderItems = async () => {
   const res = await fetchClient(`/items`, {
