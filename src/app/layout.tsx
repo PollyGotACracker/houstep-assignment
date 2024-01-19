@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Roboto } from "next/font/google";
 import "./globals.css";
+import RecoilRootProvider from "@/atoms/provider";
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -22,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <body className={`${inter.className} ${roboto.className}`}>
-        {children}
+        <RecoilRootProvider>{children}</RecoilRootProvider>
       </body>
     </html>
   );
