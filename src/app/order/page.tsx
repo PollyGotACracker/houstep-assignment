@@ -1,24 +1,12 @@
-import styles from "./page.module.css";
 import Header from "./_component/Header";
 import UserOrder from "./_component/UserOrder";
-import Loader from "./_component/Loader";
-import ProductItem from "./_component/ProductItem";
-import { getOrderItems } from "@/services/order";
-import { OrderItem } from "@/types/order";
+import ProductItemList from "./_component/ProductItemList";
 
-export default async function OrderPage() {
-  const data = await getOrderItems();
-
+export default function OrderPage() {
   return (
     <main>
       <Header />
-      {/* <Loader /> */}
-      <ul className={styles.product_list}>
-        {data &&
-          data.map((item: OrderItem) => (
-            <ProductItem key={item.id} item={item} />
-          ))}
-      </ul>
+      <ProductItemList />
       <UserOrder />
     </main>
   );
