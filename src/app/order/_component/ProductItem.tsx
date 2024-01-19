@@ -63,11 +63,19 @@ export default function ProductItem(props: { item: OrderItemType }) {
         {!!event && <span className={styles.event_tag}>이벤트</span>}
       </div>
       <div className={styles.amount_wrapper}>
-        <button className={styles.amount_button} onClick={decreaseAmount}>
+        <button
+          className={styles.amount_button}
+          onClick={decreaseAmount}
+          type="button"
+        >
           -
         </button>
         <span className={styles.amount}>{amount}</span>
-        <button className={styles.amount_button} onClick={increaseAmount}>
+        <button
+          className={styles.amount_button}
+          onClick={increaseAmount}
+          type="button"
+        >
           +
         </button>
       </div>

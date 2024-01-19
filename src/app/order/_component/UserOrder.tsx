@@ -36,6 +36,7 @@ export default function UserOrder() {
         className={styles.order_button}
         disabled={!!!totalCost || isOrdered}
         onClick={submitOrderHandler}
+        type="button"
       >
         {submitText}
       </button>
