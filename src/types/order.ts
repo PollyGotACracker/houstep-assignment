@@ -5,3 +5,9 @@ export interface OrderItemType {
   materialType: number;
   price: number;
 }
+
+export interface OrderCartType {
+  id: string;
+  amount: number;
+  product: OrderItemType;
+}
