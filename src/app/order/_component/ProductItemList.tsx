@@ -16,7 +16,7 @@ export default function ProductItemList() {
       setItems(data);
     };
     fetchData();
-  }, [getOrderItems]);
+  }, []);
 
   return (
     <>
