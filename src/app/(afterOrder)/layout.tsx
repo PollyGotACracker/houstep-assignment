@@ -21,7 +21,7 @@ export default function SubmitOrderLayout({
         router.replace("/order");
       }, 3000);
     }
-  }, [isOrdered]);
+  }, [isOrdered, setIsOrdered, router]);
 
   if (!isOrdered) return <></>;
   return <>{children}</>;

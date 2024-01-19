@@ -9,7 +9,7 @@ import CenteredLayout from "@/app/_component/CenteredLayout";
 export default function CompletePage() {
   const resetCart = useResetRecoilState(orderCartState);
 
-  useEffect(() => resetCart(), []);
+  useEffect(() => resetCart(), [resetCart]);
 
   return (
     <CenteredLayout gap="12px">
