@@ -1,4 +1,6 @@
-import CenteredLayout from "../_component/CenteredLayout";
+"use client";
+
+import CenteredLayout from "@/app/_component/CenteredLayout";
 
 export default function ErrorPage() {
   return (

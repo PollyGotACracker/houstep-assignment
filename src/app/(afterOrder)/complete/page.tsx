@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import CenteredLayout from "../_component/CenteredLayout";
+import CenteredLayout from "@/app/_component/CenteredLayout";
 
 export default function CompletePage() {
   return (

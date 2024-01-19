@@ -32,4 +32,5 @@
 }
 .order_button:disabled {
   background-color: #c1c1c1;
+  cursor: inherit;
 }
