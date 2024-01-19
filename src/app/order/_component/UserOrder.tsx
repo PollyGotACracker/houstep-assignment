@@ -1,7 +1,8 @@
 "use client";
 
 import styles from "./userOrder.module.css";
-import { useRecoilValue, useSetRecoilState } from "recoil";
+import { useState } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
 import { useRouter } from "next/navigation";
 import {
   isOrderedState,
@@ -13,12 +14,14 @@ export default function UserOrder() {
   const router = useRouter();
   const totalAmount = useRecoilValue(totalAmountSelector);
   const totalCost = useRecoilValue(totalCostSelector);
-  const setIsOrdered = useSetRecoilState(isOrderedState);
+  const [isOrdered, setIsOrdered] = useRecoilState(isOrderedState);
+  const [submitText, setSubmitText] = useState("주문하기");
 
   const submitOrderHandler = () => {
     if (!!!totalCost) return;
+    setIsOrdered(true);
+    setSubmitText("로딩 중...");
     setTimeout(() => {
-      setIsOrdered(true);
       router.push("/complete");
     }, 500);
   };
@@ -31,10 +34,10 @@ export default function UserOrder() {
       </p>
       <button
         className={styles.order_button}
-        disabled={!!!totalCost}
+        disabled={!!!totalCost || isOrdered}
         onClick={submitOrderHandler}
       >
-        주문하기
+        {submitText}
       </button>
     </div>
   );
