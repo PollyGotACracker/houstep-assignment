@@ -1,11 +1,11 @@
 "use client";
 
 import styles from "./productItemList.module.css";
-import { useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import { getOrderItems } from "@/services/order";
 import { OrderItemType } from "@/types/order";
 import Loader from "./Loader";
-import ProductItem from "./ProductItem";
+const ProductItem = lazy(() => import("./ProductItem"));
 
 export default function ProductItemList() {
   const [items, setItems] = useState<OrderItemType[] | []>([]);
@@ -20,15 +20,13 @@ export default function ProductItemList() {
 
   return (
     <>
-      {!!items.length ? (
+      <Suspense fallback={<Loader />}>
         <ul className={styles.product_list}>
           {items.map((item: OrderItemType) => (
             <ProductItem key={item.id} item={item} />
           ))}
         </ul>
-      ) : (
-        <Loader />
-      )}
+      </Suspense>
     </>
   );
 }
