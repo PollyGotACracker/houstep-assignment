@@ -9,6 +9,7 @@ import { orderCartState } from "@/atoms/order";
 export default function ProductItem(props: { item: OrderItemType }) {
   const { id, name, event, price } = props.item;
   const [cart, setCart] = useRecoilState(orderCartState);
+  const [cost, setCost] = useState(price);
   const [amount, setAmount] = useState(0);
 
   const increaseAmount = () => {
@@ -24,6 +25,7 @@ export default function ProductItem(props: { item: OrderItemType }) {
       });
       setCart([...newCart]);
       setAmount(newAmount);
+      setCost(price * newAmount);
     } else {
       const newCartItem = {
         id: id,
@@ -32,13 +34,14 @@ export default function ProductItem(props: { item: OrderItemType }) {
       };
       setCart([...cart, newCartItem]);
       setAmount(1);
+      setCost(price);
     }
   };
 
   const decreaseAmount = () => {
     if (amount === 0) return;
     const itemIndex = cart.findIndex((cartItem) => cartItem.id === id);
-    if (itemIndex >= 0) {
+    if (amount > 1) {
       const newAmount = cart[itemIndex].amount - 1;
       const newCart = cart.map((cartItem) => {
         if (cartItem.id === id) {
@@ -48,10 +51,12 @@ export default function ProductItem(props: { item: OrderItemType }) {
       });
       setCart([...newCart]);
       setAmount(newAmount);
+      setCost(price * newAmount);
     } else {
       const removedCart = cart.filter((cartItem) => cartItem.id !== id);
       setCart([...removedCart]);
       setAmount(0);
+      setCost(price);
     }
   };
 
@@ -79,7 +84,7 @@ export default function ProductItem(props: { item: OrderItemType }) {
           +
         </button>
       </div>
-      <div className={styles.price}>{price.toLocaleString("ko-KR")}원</div>
+      <div className={styles.price}>{cost.toLocaleString("ko-KR")}원</div>
     </li>
   );
 }
