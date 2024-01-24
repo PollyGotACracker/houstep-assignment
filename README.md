@@ -6,7 +6,7 @@
 
 ## 배포 주소
 
-- [https://houstep-assignment-186905236668.herokuapp.com/](https://houstep-assignment-186905236668.herokuapp.com/)
+- <s>`https://houstep-assignment-186905236668.herokuapp.com/`</s>
 
 ## 사용 라이브러리
 
